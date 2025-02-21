@@ -6,7 +6,7 @@ function HomePage() {
     return (
         <>
             <Navbar />
-            <h1 className='heading'>idshjdhj</h1>
+            <h1 className='heading'>HomePage</h1>
         </>
     )
 }

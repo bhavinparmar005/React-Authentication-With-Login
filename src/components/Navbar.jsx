@@ -1,5 +1,6 @@
 import React from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
     return (
@@ -13,12 +14,18 @@ function Navbar() {
                         <span className="line line3" />
                     </div>
                     <ul className="menu-items">
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">Add Post</a></li>
-                        <li><a href="#">Registration</a></li>
+                        {/* <li><a href="#">Home</a></li> */}
+                        {/* <li><a href="#">Add Post</a></li> */}
+                        {/* <li><a href="#">Registration</a></li>
                         <li><a href="#">login page</a></li>
                         <li><a href="#">Log Out</a></li>
-                        <li><a href="#">DashBord</a></li>
+                        <li><a href="#">DashBord</a></li> */}
+                        <li><Link to={`/HomePage`}>Home</Link></li>
+                        <li><Link to={`/AddPost`}> AddPost</Link></li>
+                        <li><Link to={`/`}>Registration</Link></li>
+                        <li><Link to={`/LoginPage`}> Login</Link></li>
+                        <li><Link to={`/LogoutPage`}>Logout</Link></li>
+                      
                        
                     </ul>
                     <h1 className="logo">Shopify</h1>
