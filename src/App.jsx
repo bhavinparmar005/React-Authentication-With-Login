@@ -16,11 +16,11 @@ function App() {
         <Routes>
           <Route path='/AddPost' element={<AddPost />} />
           <Route path='/EditPage' element={<EditPage />} />
-          <Route path='/HomePage' element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/LoginPage' element={<LoginPage />} />
           <Route path='/LogoutPage' element={<LogoutPage />} />
-          <Route path='/' element={<RegistrationPage />} />
           <Route path='/DashBord' element={<DashBord/>}/>
+          <Route path='/RegistrationPage' element={<RegistrationPage />} />
         </Routes>
       </BrowserRouter>
 

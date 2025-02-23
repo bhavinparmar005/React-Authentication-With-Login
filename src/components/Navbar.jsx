@@ -14,25 +14,22 @@ function Navbar() {
                         <span className="line line3" />
                     </div>
                     <ul className="menu-items">
-                        {/* <li><a href="#">Home</a></li> */}
-                        {/* <li><a href="#">Add Post</a></li> */}
-                        {/* <li><a href="#">Registration</a></li>
-                        <li><a href="#">login page</a></li>
-                        <li><a href="#">Log Out</a></li>
-                        <li><a href="#">DashBord</a></li> */}
-                        <li><Link to={`/HomePage`}>Home</Link></li>
+
+
+                        <li><Link to={`/`}>Home</Link></li>
                         <li><Link to={`/AddPost`}> AddPost</Link></li>
-                        <li><Link to={`/`}>Registration</Link></li>
-                        <li><Link to={`/LoginPage`}> Login</Link></li>
-                        <li><Link to={`/LogoutPage`}>Logout</Link></li>
-                      
-                       
+                        <li><Link to={`/RegistrationPage`}>Registration</Link></li>
+                        {/* <li><Link to={`/LoginPage`}> Login</Link></li> */}
+                        {/* <li><Link to={`/LogoutPage`}>Logout</Link></li> */}
+                        <li><Link to={`/DashBord`}>Dashboard</Link></li>
+
+
                     </ul>
                     <h1 className="logo">Shopify</h1>
                 </div>
             </nav>
 
-            <div className="Empty"></div>
+            {/* <div className="Empty"></div> */}
 
         </>
     )
