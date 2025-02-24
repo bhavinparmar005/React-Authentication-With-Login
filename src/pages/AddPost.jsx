@@ -1,6 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 
 function AddPost() {
 
@@ -8,6 +11,7 @@ function AddPost() {
   const [content, setContent] = useState('');
   const [image, setImage] = useState('');
   const [post, setPost] = useState(JSON.parse(localStorage.getItem('post')) || []);
+  const navigate = useNavigate();
 
   const handelSubmit = (e) => {
     e.preventDefault();
@@ -27,12 +31,27 @@ function AddPost() {
 
     setPost(record);
 
-
     setTitle('')
     setContent('')
     setImage('')
 
-    alert('Post submitted successfully');
+    Swal.fire({
+      title: " Add Post Successfully !",
+      icon: "success",
+      draggable: true,
+      showConfirmButton: false,
+      timer: 2000
+    });
+
+    setTimeout(() => {
+
+      navigate('/')
+    }, 2100);
+
+
+
+
+
   }
   return (
     <>

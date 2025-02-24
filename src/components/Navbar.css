@@ -2,16 +2,28 @@
     content: '';
     width: 0;
     height: 2px;
-    background: rgb(182, 181, 181);
+    background: #ffcc00;
     display: block;
-    margin: auto;
+    /* margin: auto; */
     transition: 0.5s;
 
 }
-
+.nav-link:hover{
+    color: #ffcc00 !important;
+}
+.navbar-brand:hover{
+    transition: 0.5s;
+    color: #ffcc00 !important;
+}
 .nav-link:hover::after {
     width: 100%;
 }
 .offcanvas {
     width: 250px;
+}
+
+@media (width < 990px) {
+    .nav-link:hover::after {
+        width: 0px;
+    }
 }

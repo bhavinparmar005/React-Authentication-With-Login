@@ -6,7 +6,7 @@ function LoginPage() {
   return (
     <>
       <Navbar />
-    
+
       <div className="container d-flex justify-content-center align-items-center mt-5 mb-5">
         <div className="col-md-6 col-lg-4 col-sm-8">
           <div className="card p-4 shadow-lg">

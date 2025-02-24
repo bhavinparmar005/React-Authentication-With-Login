@@ -14,10 +14,10 @@ function Navbar() {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav ms-auto">
-                                <li className="nav-item"><Link className="nav-link fs-5" to={`/`}> Home</Link></li>
-                                <li className="nav-item"><Link className="nav-link fs-5" to={`/AddPost`}> AddPost</Link></li>
-                                <li className="nav-item"><Link className="nav-link fs-5" to={`/RegistrationPage`}>Registration</Link></li>
-                                <li className="nav-item"><Link className="nav-link fs-5" to={`/DashBord`}>Dashboard</Link></li>
+                                <li className="nav-item"><Link className="nav-link fs-5 text-light" to={`/`}> Home</Link></li>
+                                <li className="nav-item"><Link className="nav-link fs-5 text-light" to={`/AddPost`}> AddPost</Link></li>
+                                <li className="nav-item"><Link className="nav-link fs-5 text-light" to={`/RegistrationPage`}>Registration</Link></li>
+                                <li className="nav-item"><Link className="nav-link fs-5 text-light" to={`/DashBord`}>Dashboard</Link></li>
 
 
 
