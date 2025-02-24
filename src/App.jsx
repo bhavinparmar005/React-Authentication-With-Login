@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage'
 import AddPost from './pages/AddPost'
 import LoginPage from './pages/LoginPage'
 import EditPage from './pages/EditPage'
-import LogoutPage from './pages/LogoutPage'
+
 import DashBord from './pages/DashBord'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
           <Route path='/EditPage' element={<EditPage />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/LoginPage' element={<LoginPage />} />
-          <Route path='/LogoutPage' element={<LogoutPage />} />
+       
           <Route path='/DashBord' element={<DashBord />} />
           <Route path='/RegistrationPage' element={<RegistrationPage />} />
         </Routes>

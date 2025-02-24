@@ -72,7 +72,7 @@ function HomePage() {
                 </button>
             </div>
 
-            <h1 className='mt-3 text-center text-black-50'> Show Post</h1>
+            <h1 className='mt-3 text-center text-black-50'> Show Product</h1>
 
             <div className="container my-3">
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">

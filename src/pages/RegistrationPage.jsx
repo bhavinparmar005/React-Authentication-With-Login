@@ -49,19 +49,19 @@ function RegistrationPage() {
                         <form onSubmit={registrationData}>
                             <div className="mb-3">
                                 <label htmlFor="name" className="form-label">Full Name</label>
-                                <input type="text" className="form-control" id="name" placeholder="Enter your full name" onChange={(e) => setName(e.target.value)} value={name} />
+                                <input type="text" className="form-control" id="name" placeholder="Enter your full name" onChange={(e) => setName(e.target.value)} value={name}  required/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email address</label>
-                                <input type="email" className="form-control" id="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                                <input type="email" className="form-control" id="email" placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)} value={email} required />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="password" className="form-label">Password</label>
-                                <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                                <input type="password" className="form-control" id="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} value={password} required />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="confirm-password" className="form-label">Confirm Password</label>
-                                <input type="password" className="form-control" id="confirm-password" placeholder="Confirm password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword} />
+                                <input type="password" className="form-control" id="confirm-password" placeholder="Confirm password" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}  required/>
                             </div>
                             <button type="submit" className="btn btn-primary w-100">Register</button>
                         </form>
