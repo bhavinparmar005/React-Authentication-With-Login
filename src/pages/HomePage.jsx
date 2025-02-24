@@ -17,13 +17,13 @@ function HomePage() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="./public/slide1.jpg" className="d-block w-100 img_hight" alt="Slide 1" />
+                        <img src="./slide1.jpg" className="d-block w-100 img_hight" alt="Slide 1" />
                     </div>
                     <div className="carousel-item">
-                        <img src="./public/slide2.jpg" className="d-block w-100 img_hight" alt="Slide 2" />
+                        <img src="./slide2.jpg" className="d-block w-100 img_hight" alt="Slide 2" />
                     </div>
                     <div className="carousel-item">
-                        <img src="./public/slide3.jpg" className="d-block w-100 img_hight" alt="Slide 3" />
+                        <img src="./slide3.jpg" className="d-block w-100 img_hight" alt="Slide 3" />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -40,7 +40,7 @@ function HomePage() {
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./public/slide1.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide1.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
@@ -53,7 +53,7 @@ function HomePage() {
                     </div>
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./public/slide2.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide2.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
@@ -66,7 +66,7 @@ function HomePage() {
                     </div>
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./public/slide3.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide3.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
