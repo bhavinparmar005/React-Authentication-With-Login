@@ -3,10 +3,34 @@ import Navbar from '../components/Navbar'
 
 import { useState } from 'react'
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom'
 
 function DashBord() {
-  const [showRegistrationData, setShowRegistrationData] = useState(JSON.parse(localStorage.getItem('registrationuser')) || [])
-  const logoutUser = () => {
+
+
+  const [showLoginUser, setshowLoginUser] = useState(JSON.parse(localStorage.getItem('loginuserdata')) || [])
+
+  let nav = useNavigate()
+
+
+
+
+  const logoutUser = (name) => {
+
+    let logout = showLoginUser.filter((val) => {
+      return (
+        val.name != name
+      )
+    })
+
+
+    setshowLoginUser(logout)
+    localStorage.setItem('loginuserdata', JSON.stringify(logout))
+
+
+    setTimeout(() => {
+      nav('/')
+    }, 2000);
 
     Swal.fire({
       icon: 'success',
@@ -16,6 +40,7 @@ function DashBord() {
 
     });
   }
+
 
   return (
     <>
@@ -35,22 +60,26 @@ function DashBord() {
             </thead>
             <tbody>
 
+
               {
-                showRegistrationData.map((val, index) => {
+                showLoginUser.map((val, index) => {
                   return (
 
                     <tr>
-                      <th scope="row" >{index + 1}</th>
+                      <th scope="row">{index + 1}</th>
                       <td><img src="userDummi img.avif" className="rounded-circle img-fluid" alt="User Photo" height={"40px"} width={'40px'} /></td>
                       <td>{val.name}</td>
                       <td>{val.email}</td>
                       <td>
-                        <button className="btn btn-danger btn-sm" onClick={() => logoutUser()}> Log Out </button>
+                        <button className="btn btn-danger btn-sm" onClick={() => logoutUser(val.name)}> Log Out </button>
                       </td>
                     </tr>
                   )
                 })
               }
+
+
+
 
             </tbody>
           </table>

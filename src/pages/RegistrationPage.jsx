@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 
@@ -11,6 +11,7 @@ function RegistrationPage() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [allregistrationuser, setAllregistrationuser] = useState(JSON.parse(localStorage.getItem('registrationuser')) || [])
+    let nav =useNavigate()
 
     const registrationData = (e) => {
         e.preventDefault()
@@ -33,8 +34,11 @@ function RegistrationPage() {
             icon: 'success',
             title: 'Registration Successfull',
             showConfirmButton: false,
-            timer: 1500
+            timer: 2000
         });
+        setTimeout(() => {
+            nav('/LoginPage')
+        }, 2000);
 
     }
 

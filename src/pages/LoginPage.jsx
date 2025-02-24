@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 
@@ -9,32 +9,43 @@ function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [registrationuser, setAllregistrationuser] = useState(JSON.parse(localStorage.getItem('registrationuser')) || [])
-
-  const handelSubmit = (e) => {
-    e.preventDefault()
-
-    let loginUser = registrationuser.find((val) => {
-      return (
+  const [loginArry,setLoginArry] = useState(JSON.parse(localStorage.getItem('loginuserdata')) || []) ;
+ let nav = useNavigate()
+ 
+ const handelSubmit = (e) => {
+   e.preventDefault()
+   
+   
+   let loginUser = registrationuser.find((val) => {
+     return (
         val.email == email && val.password == password
       )
     })
-
+    
+    
     if(loginUser){
-        Swal.fire({
-            title: " Login Successfully !",
-            icon: "success",
+      Swal.fire({
+        title: " Login Successfully !",
+        icon: "success",
             draggable: true,
             showConfirmButton: false,
             timer: 2000
           });
+          
+          let login= [...loginArry,loginUser]
 
-          localStorage.setItem('loginuserdata',JSON.stringify(loginUser))
+          localStorage.setItem('loginuserdata',JSON.stringify(login));
+
+          setLoginArry(login)
+
+          
+
 
 
     }else{
 
         Swal.fire({
-            title: " your Password Not Match !",
+            title: " your Password Not Match ! && first Register Then Login",
             icon: "error",
             draggable: true,
             showConfirmButton: false,
@@ -45,6 +56,10 @@ function LoginPage() {
 
     setEmail('')
     setPassword('')
+
+    setTimeout(() => {
+      nav('/')
+    }, 2000);
 
   }
   return (

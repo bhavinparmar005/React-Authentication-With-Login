@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage'
 import EditPage from './pages/EditPage'
 
 import DashBord from './pages/DashBord'
+import Swal from 'sweetalert2'
 
 function App() {
   return (
@@ -14,11 +15,11 @@ function App() {
 
       <BrowserRouter>
         <Routes>
+          <Route path='*' element={<> 404 not page Found !!</>}/>
           <Route path='/AddPost' element={<AddPost />} />
           <Route path='/EditPage' element={<EditPage />} />
           <Route path='/' element={<HomePage />} />
           <Route path='/LoginPage' element={<LoginPage />} />
-       
           <Route path='/DashBord' element={<DashBord />} />
           <Route path='/RegistrationPage' element={<RegistrationPage />} />
         </Routes>
