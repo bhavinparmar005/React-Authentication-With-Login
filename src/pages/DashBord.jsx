@@ -15,7 +15,7 @@ function DashBord() {
 
     useEffect(()=>{
       let login = JSON.parse(localStorage.getItem('loginuserdata'));
-      if(!login){
+      if(!login || login.length == 0){
         nav('/LoginPage');
       }
   },[])

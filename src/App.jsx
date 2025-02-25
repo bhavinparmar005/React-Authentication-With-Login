@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage'
 import EditPage from './pages/EditPage'
 
 import DashBord from './pages/DashBord'
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
 function App() {
   return (

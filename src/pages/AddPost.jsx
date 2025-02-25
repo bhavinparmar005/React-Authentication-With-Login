@@ -15,10 +15,11 @@ function AddPost() {
   
   useEffect(()=>{
     let login = JSON.parse(localStorage.getItem('loginuserdata'));
-    if(!login){
+    
+    if(!login || login.length == 0){
       navigate('/LoginPage');
     }
-},[])
+  },[])
 
   const handelSubmit = (e) => {
     e.preventDefault();
