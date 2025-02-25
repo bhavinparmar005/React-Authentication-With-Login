@@ -16,6 +16,12 @@ function EditPage() {
   const navigate = useNavigate();
 
   let location = useLocation();
+  useEffect(()=>{
+    let login = JSON.parse(localStorage.getItem('loginuserdata'));
+    if(!login){
+      navigate('/LoginPage');
+    }
+},[])
 
   useEffect(() => {
     setTitle(location.state.title)

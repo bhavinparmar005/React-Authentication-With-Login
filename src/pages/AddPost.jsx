@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,13 @@ function AddPost() {
   const [image, setImage] = useState('');
   const [post, setPost] = useState(JSON.parse(localStorage.getItem('post')) || []);
   const navigate = useNavigate();
+  
+  useEffect(()=>{
+    let login = JSON.parse(localStorage.getItem('loginuserdata'));
+    if(!login){
+      navigate('/LoginPage');
+    }
+},[])
 
   const handelSubmit = (e) => {
     e.preventDefault();

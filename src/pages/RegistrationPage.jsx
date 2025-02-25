@@ -21,24 +21,39 @@ function RegistrationPage() {
             password: password,
             confirmPassword: confirmPassword
         }
-        let user = [...allregistrationuser, registrationuser]
-        localStorage.setItem('registrationuser', JSON.stringify(user))
-        setAllregistrationuser(user)
 
-        setName('')
-        setEmail('')
-        setPassword('')
-        setConfirmPassword('')
+        if(password !== confirmPassword){
+           
+             Swal.fire({
+                        position: "center",
+                        icon: "info",
+                        title: "Password and Confirm Password not match",
+                        showConfirmButton: true,
+                        
+                    });
+            setConfirmPassword('')
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Registration Successfull',
-            showConfirmButton: false,
-            timer: 2000
-        });
-        setTimeout(() => {
-            nav('/LoginPage')
-        }, 2000);
+        }else{
+
+            let user = [...allregistrationuser, registrationuser]
+            localStorage.setItem('registrationuser', JSON.stringify(user))
+            setAllregistrationuser(user)
+    
+            setName('')
+            setEmail('')
+            setPassword('')
+            setConfirmPassword('')
+    
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successfull',
+                showConfirmButton: false,
+                timer: 2000
+            });
+            setTimeout(() => {
+                nav('/LoginPage')
+            }, 2000);
+        }
 
     }
 

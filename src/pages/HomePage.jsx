@@ -1,7 +1,7 @@
 
 import './HomePage.css'
 import Navbar from '../components/Navbar'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
@@ -10,11 +10,16 @@ function HomePage() {
     let navigation = useNavigate();
     const [PrintPost, setPrintPost] = useState(JSON.parse(localStorage.getItem('post')) || []);
 
+
+ 
+
     const deletePost = (id) => {
 
         let deletedPost = PrintPost.filter((val) => {
             return val.id != id
         })
+
+
 
 
         Swal.fire({
@@ -23,6 +28,7 @@ function HomePage() {
             draggable: true,
             showConfirmButton: false,
             timer: 2000
+
         });
 
         localStorage.setItem('post', JSON.stringify(deletedPost));
@@ -82,7 +88,7 @@ function HomePage() {
                             return (
                                 <div className="col">
                                     <div className="card h-auto card_hover">
-                                        <img src={val.image} className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                                        <img src={val.image} className="card-img-top" alt="Card Image" height={'250px'} width={'250px'} />
                                         <div className="card-body">
                                             <h5 className="card-title">{val.title}</h5>
                                             <p className="card-text">{val.content}.</p>
@@ -98,7 +104,7 @@ function HomePage() {
                     }
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./slide1.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide1.jpg" className="card-img-top" alt="Card Image" height={'250px'} width={'250px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
@@ -111,7 +117,7 @@ function HomePage() {
                     </div>
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./slide2.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide2.jpg" className="card-img-top" alt="Card Image" height={'250px'} width={'250px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
@@ -124,7 +130,7 @@ function HomePage() {
                     </div>
                     <div className="col">
                         <div className="card h-auto card_hover">
-                            <img src="./slide3.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
+                            <img src="./slide3.jpg" className="card-img-top" alt="Card Image" height={'250px'} width={'250px'} />
                             <div className="card-body">
                                 <h5 className="card-title">Card Title</h5>
                                 <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
@@ -140,49 +146,7 @@ function HomePage() {
                 </div>
             </div>
 
-            {/* <div className="container my-3">
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div className="col">
-                        <div className="card h-auto card_hover">
-                            <img src="./slide1.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
-                            <div className="card-body">
-                                <h5 className="card-title">Card Title</h5>
-                                <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
-                                <div className="d-flex justify-content-between">
-                                    <button className="btn btn-primary" onClick={() => dummyCard()}><i class="bi bi-pencil me-2"></i>Edit Post</button>
-                                    <button className="btn btn-danger" onClick={() => dummyCard()}> <i class="bi bi-trash me-2"></i>Delete Post</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card h-auto card_hover">
-                            <img src="./slide2.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
-                            <div className="card-body">
-                                <h5 className="card-title">Card Title</h5>
-                                <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
-                                <div className="d-flex justify-content-between">
-                                    <button className="btn btn-primary" onClick={() => dummyCard()}><i class="bi bi-pencil me-2"></i>Edit Post</button>
-                                    <button className="btn btn-danger" onClick={() => dummyCard()}> <i class="bi bi-trash me-2"></i>Delete Post</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <div className="card h-auto card_hover">
-                            <img src="./slide3.jpg" className="card-img-top" alt="Card Image" height={'200px'} width={'200px'} />
-                            <div className="card-body">
-                                <h5 className="card-title">Card Title</h5>
-                                <p className="card-text">This is a description for the card. It contains some placeholder text.</p>
-                                <div className="d-flex justify-content-between">
-                                    <button className="btn btn-primary" onClick={() => dummyCard()}><i class="bi bi-pencil me-2"></i>Edit Post</button>
-                                    <button className="btn btn-danger" onClick={() => dummyCard()}> <i class="bi bi-trash me-2"></i>Delete Post</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
+           
 
             < Footer />
 

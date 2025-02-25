@@ -41,6 +41,9 @@ function LoginPage() {
           
 
 
+          setTimeout(() => {
+            nav('/')
+          }, 2000);
 
     }else{
 
@@ -57,9 +60,6 @@ function LoginPage() {
     setEmail('')
     setPassword('')
 
-    setTimeout(() => {
-      nav('/')
-    }, 2000);
 
   }
   return (

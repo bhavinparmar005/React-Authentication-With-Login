@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 
 import { useState } from 'react'
@@ -11,6 +12,13 @@ function DashBord() {
   const [showLoginUser, setshowLoginUser] = useState(JSON.parse(localStorage.getItem('loginuserdata')) || [])
 
   let nav = useNavigate()
+
+    useEffect(()=>{
+      let login = JSON.parse(localStorage.getItem('loginuserdata'));
+      if(!login){
+        nav('/LoginPage');
+      }
+  },[])
 
 
 
