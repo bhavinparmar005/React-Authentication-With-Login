@@ -10,8 +10,13 @@ function HomePage() {
     let navigation = useNavigate();
     const [PrintPost, setPrintPost] = useState(JSON.parse(localStorage.getItem('post')) || []);
 
+    useEffect(() => {
+        const enableScroll = () => {
+            document.body.style.overflow = "auto";
+        };
 
- 
+        return () => enableScroll();  // Cleanup on unmount
+    }, []);
 
     const deletePost = (id) => {
 
@@ -146,7 +151,7 @@ function HomePage() {
                 </div>
             </div>
 
-           
+
 
             < Footer />
 
